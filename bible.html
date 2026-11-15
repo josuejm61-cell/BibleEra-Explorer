@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read the Bible | BibleEra Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>📖 BibleEra Explorer</h1>
+    <p>Journey Through Biblical History</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#timeline">Timeline</a>
+    <a href="bible.html">Read Bible</a>
+  </nav>
+
+  <main class="bible-reader">
+    <h2>Read the Bible</h2>
+    <p>Choose a Bible book, chapter, and translation.</p>
+
+    <div class="bible-controls">
+      <select id="translation">
+        <option value="web">World English Bible</option>
+        <option value="kjv">King James Version</option>
+        <option value="rvr1960">Reina-Valera 1960</option>
+      </select>
+
+      <select id="book">
+        <option value="Genesis">Genesis</option>
+        <option value="Exodus">Exodus</option>
+        <option value="Psalms">Psalms</option>
+        <option value="Matthew">Matthew</option>
+        <option value="Mark">Mark</option>
+        <option value="Luke">Luke</option>
+        <option value="John">John</option>
+        <option value="Romans">Romans</option>
+        <option value="Revelation">Revelation</option>
+      </select>
+
+      <select id="chapter"></select>
+
+      <button id="readButton">Read Chapter</button>
+    </div>
+
+    <section id="bible-content" aria-live="polite">
+      <p>Select a book and chapter to begin reading.</p>
+    </section>
+  </main>
+
+  <script src="bible.js"></script>
+</body>
+</html>
