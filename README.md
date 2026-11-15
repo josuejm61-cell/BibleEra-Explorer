@@ -1,30 +1,29 @@
-# BibleEra Explorer — Interactive Bible Timeline
+# BibleEra Explorer — Version 1.2
 
-A starter website for a CMPA senior capstone. Explore 12 major Bible events in a broad narrative order, filter by testament, search events or people, and click cards for more information and Scripture references.
+A student capstone project: explore major Bible events through an interactive timeline.
 
-## Open locally
+## Run locally
 
-1. Download and unzip the project.
-2. Open the `BibleEra-Explorer` folder in VS Code.
-3. Open `index.html` in a browser (or use the **Live Server** extension).
-4. Edit `index.html` (page content), `style.css` (design), and `script.js` (events and interactions).
+1. Extract the ZIP and open the `BibleEra-Explorer` folder in VS Code.
+2. Open `index.html` with the Live Server extension (or open it directly in your browser).
+3. Click a timeline event to open its quick summary, then choose **Explore this story** for a separate page.
+4. Use the Old/New Testament filters and search field to find events.
 
-## Publish on GitHub Pages
+## Files
 
-1. Create a repository named `BibleEra-Explorer` on GitHub.
-2. Upload `index.html`, `style.css`, and `script.js` to the root of the repository (README is optional).
-3. In the repository choose **Settings → Pages → Build and deployment → Deploy from a branch**.
-4. Select `main` and `/ (root)`, then save.
-5. Your site should appear at `https://josuejm61-cell.github.io/BibleEra-Explorer/` after GitHub finishes publishing.
+- `index.html` — Homepage, timeline, filters, event dialog
+- `style.css` — Responsive styling and illustrated event cards
+- `script.js` — Timeline information and interactions
+- `story.html` — Individual story page layout
+- `story.js` — Loads the selected event and adds previous/next navigation
 
-## Add an event
+## Publish
 
-Open `script.js` and add an object to the `events` array with `id`, `title`, `testament` (`old` or `new`), `era`, `summary`, `description`, `people`, `scripture`, and `keywords`.
+Publish these files to the root of your `BibleEra-Explorer` GitHub repository. In **Settings → Pages**, use `main` and `/ (root)`. The expected URL is `https://josuejm61-cell.github.io/BibleEra-Explorer/` once published.
 
-## Scope and accuracy
+## Notes
 
-BibleEra Explorer uses a broad narrative order, not a claim about exact historical dates. Scripture references should be verified during content review. Descriptions are educational summaries, not quotations from a specific Bible translation. No account, backend, or API key is required.
-
-## Rename an existing GitHub repository
-
-If your repository is still named `BibleVerse` or `BibleEra`, use **Settings → General → Repository name** to rename it to `BibleEra-Explorer`. Upload the updated website files, commit, and check **Settings → Pages**. If you previously set a custom domain, review it separately under Pages.
+- No login, database or AI API key required.
+- Art is made from typography and CSS shapes; no external images or image licenses required.
+- The event sequence is a simplified overview for learning, not an assertion of precise historical dates.
+- To add events, edit the `events` array in `script.js`.
