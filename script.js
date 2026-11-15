@@ -16,6 +16,7 @@ const events = [
 ];
 
 const list = document.querySelector('#timeline-list');
+if (list) {
 const searchInput = document.querySelector('#event-search');
 const filterButtons = document.querySelectorAll('[data-filter]');
 const resultCount = document.querySelector('#result-count');
@@ -25,6 +26,13 @@ let activeFilter = 'all';
 
 document.querySelector('#event-total').textContent = events.length;
 
+function artForEvent(id) {
+  const icons = {
+    creation: '☀', fall: '♧', flood: '≋', abraham: '✧', joseph: '✦', exodus: '〰',
+    david: '♛', exile: '⌂', 'jesus-birth': '★', ministry: '✳', resurrection: '✝', pentecost: '✷'
+  };
+  return icons[id] || '✦';
+}
 function renderEvents() {
   const search = searchInput.value.trim().toLowerCase();
   const visible = events.filter(event => {
@@ -42,7 +50,7 @@ function renderEvents() {
     button.className = 'event-card';
     button.setAttribute('aria-label', `Read about ${event.title}`);
     // All HTML here is local, curated data, not external input.
-    button.innerHTML = `<div class="card-top"><span class="event-era">${event.era}</span><span class="event-number">EVENT ${String(index).padStart(2, '0')}</span></div><h3>${event.title}</h3><p>${event.summary}</p><div class="card-footer">Read the story <span aria-hidden="true">→</span></div>`;
+    button.innerHTML = `<div class="card-top"><span class="event-era">${event.era}</span><span class="event-number">EVENT ${String(index).padStart(2, '0')}</span></div><div class="event-card-main"><span class="event-art art-${event.testament}" aria-hidden="true">${artForEvent(event.id)}</span><div class="event-copy"><h3>${event.title}</h3><p>${event.summary}</p></div></div><div class="card-footer">Read the story <span aria-hidden="true">→</span></div>`;
     button.addEventListener('click', () => openEvent(event));
     item.append(button);
     list.append(item);
@@ -56,6 +64,7 @@ function openEvent(event) {
   document.querySelector('#dialog-description').textContent = event.description;
   document.querySelector('#dialog-people').textContent = event.people;
   document.querySelector('#dialog-scripture').textContent = event.scripture;
+  document.querySelector('#full-story-link').href = `story.html?event=${encodeURIComponent(event.id)}`;
   dialog.showModal();
 }
 filterButtons.forEach(button => button.addEventListener('click', () => {
@@ -71,3 +80,5 @@ searchInput.addEventListener('input', renderEvents);
 document.querySelector('#close-dialog').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
 renderEvents();
+
+}
