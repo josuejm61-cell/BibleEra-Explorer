@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10293b">
+  <meta name="description" content="Explore major Bible events in an easy-to-follow interactive timeline with Scripture references.">
+  <title>BibleEra Explorer | Journey Through Biblical History</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#timeline">Skip to timeline</a>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="#home" class="logo" aria-label="BibleEra Explorer home"><span class="logo-mark" aria-hidden="true">✦</span> BibleEra<span> Explorer</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#timeline">Timeline</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">BIBLEERA EXPLORER · INTERACTIVE TIMELINE</p>
+        <h1>Explore the Bible.<br><em>One story at a time.</em></h1>
+        <p class="hero-description">Discover how important people and events connect, from Genesis to the early church. Choose an event, read a short summary, and follow the Scripture references.</p>
+        <a class="primary-button" href="#timeline">Explore the timeline <span aria-hidden="true">→</span></a>
+        <div class="hero-stats" aria-label="Website highlights">
+          <div><strong id="event-total">12</strong><span>Events to explore</span></div>
+          <div><strong>2</strong><span>Testaments</span></div>
+          <div><strong>1</strong><span>Connected story</span></div>
+        </div>
+      </div>
+      <div class="hero-decoration" aria-hidden="true"><div class="halo"></div><span>✧</span></div>
+    </section>
+
+    <section id="timeline" class="timeline-section section-pad">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow dark">THE TIMELINE</p>
+          <h2>Follow the story</h2>
+          <p>Start at the beginning or explore an event that interests you. The events are in a broad biblical narrative order; exact historical dates are not assigned.</p>
+        </div>
+        <div class="controls" role="group" aria-label="Filter timeline events">
+          <div class="filter-buttons">
+            <button class="filter-button active" data-filter="all" aria-pressed="true">All events</button>
+            <button class="filter-button" data-filter="old" aria-pressed="false">Old Testament</button>
+            <button class="filter-button" data-filter="new" aria-pressed="false">New Testament</button>
+          </div>
+          <label class="search-wrap" for="event-search"><span aria-hidden="true">⌕</span><input id="event-search" type="search" placeholder="Search events or people…" autocomplete="off"></label>
+        </div>
+        <p id="result-count" class="result-count" role="status" aria-live="polite"></p>
+        <div id="timeline-list" class="timeline-list" aria-label="Bible timeline events"></div>
+        <div class="empty-state" id="empty-state" hidden>No events match your search. Try another word or filter.</div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section section-pad">
+      <div class="container about-grid">
+        <div><p class="eyebrow">WHY BIBLEVERSE?</p><h2>Learning shouldn't feel overwhelming.</h2></div>
+        <div><p>BibleEra Explorer is a student capstone project designed to help beginners explore major events in the Bible. Instead of showing long pages of text, it gives you a simple timeline with short summaries and passages you can look up yourself.</p><p>The timeline is a learning guide, not a complete history or replacement for reading Scripture. More events and features will be added as the project develops.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><span class="logo">✦ BibleEra<span> Explorer</span></span><span>Built to explore, learn, and connect.</span><span>Student capstone project</span></div></footer>
+
+  <dialog id="event-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-content">
+      <button class="close-button" id="close-dialog" aria-label="Close event details">×</button>
+      <p id="dialog-category" class="eyebrow dark"></p>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-description"></p>
+      <h3>People involved</h3>
+      <p id="dialog-people"></p>
+      <h3>Read in the Bible</h3>
+      <p id="dialog-scripture"></p>
+      <p class="dialog-note">Open the references in your preferred Bible or translation to read the full story.</p>
+    </div>
+  </dialog>
+</body>
+</html>
